@@ -19,14 +19,14 @@ const productRouter  = require("./Routers/productsRouter");
 const uploadImageRouter  = require("./Routers/imagesRouter");
 const bannersRouter = require("./Routers/bannersRouter");
 const ordersRouter = require("./Routers/ordersRouter");
+const storeRouter = require("./Routers/storeRouter");
 
 //API
 app.use("/api/admin/product", productRouter);
 app.use("/api/admin/banner", bannersRouter);
 app.use("/api/admin/order", ordersRouter);
 app.use("/image", uploadImageRouter );
-
-
+app.use("/api/store", storeRouter);
 
 
 //CONNECT TO MONGODB

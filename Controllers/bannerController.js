@@ -12,6 +12,15 @@ const postBanner = async (req, res) => {
     }
 }
 
+const getBanners = async (req, res) => {
+    const bannerList = await bannersModel.find();
+    try {
+        res.status(200).send(bannerList);
+    } catch (error) {
+        res.status(302).send(error.message);
+    }
+}
+
 const deleteBanner = async (req, res) => { 
     const bannerID = await req.body.id;
     const bannerInfo = await bannersModel.findById(bannerID);
@@ -24,4 +33,4 @@ const deleteBanner = async (req, res) => {
     }
 }
 
-module.exports = {postBanner, deleteBanner}
+module.exports = {postBanner, deleteBanner, getBanners}
